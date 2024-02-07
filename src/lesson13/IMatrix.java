@@ -18,7 +18,7 @@ public interface IMatrix {
 	 * 
 	 * @return количесвто строк матрицы
 	 */
-	int            getRows();
+	int getRows();
 	
 	/**
 	 * Возвращает количество столбцов матрицы

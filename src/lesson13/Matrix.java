@@ -61,6 +61,9 @@ public class Matrix implements IMatrix {
 
     @Override
     public IMatrix sub(IMatrix otherMatrix) throws IllegalArgumentException, NullPointerException {
+//        otherMatrix = new otherMatrix;
+
+//        int [][] multi = new int[a.length][a[0].length]
         return null;
     }
 
