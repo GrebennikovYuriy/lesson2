@@ -5,24 +5,20 @@ import javax.swing.event.ChangeListener;
 import javax.swing.text.ChangedCharSetException;
 
 public class Stream1 extends Thread {
-    private boolean isNeedStop = false;
+
 
     @Override
     public void run() {
-        int counter = 0;
-        while (!isNeedStop) {
-            for (int i = 1; i <= 10; i++){
-                if (i % 2 != 0)
-                {
-                    System.out.println(i + getName());
+        int counter = 1;
+        while (counter <=10) {
+            System.out.println(counter + getName());
+            counter +=2;
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
 
-                }
-            }
             //Мы будем того, кто ждет
             synchronized (Monitors.STRING) {
                 Monitors.STRING.notify();
@@ -34,10 +30,7 @@ public class Stream1 extends Thread {
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
-                counter++;
-                if (counter == 1) {
-                    isNeedStop = true;
-                }
+
             }
         }
     }
